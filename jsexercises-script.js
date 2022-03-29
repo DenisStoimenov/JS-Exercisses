@@ -87,9 +87,70 @@
 {
 return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
-console.log(leapyear(2016))
+console.log(leapyear(2024))
 
-    
+//7. Write a JavaScript program to 
+//find 1st January is being a Sunday between 2014 and 2050.
+
+
+let year = 2022;
+for(year; year<=2060; year++)
+{
+    const sunday = new Date(year, 0 ,1);
+    if(sunday.getDay() === 0)
+    console.log('1st January is being a Sunday in '+year);
+
+}
+
+// 8. Write a JavaScript program where the program takes 
+// a random integer between 1 to 10, the 
+// user is then prompted to input a guess number.
+//  If the user input matches with guess number, 
+//  the program will display a 
+// message "Good Work" otherwise display a message "Not matched".
+
+function randomize(){
+
+
+let num = Math.ceil(Math.random() * 10);
+console.log(num);
+
+let guess = prompt('Guess a number between 0-10');
+if(guess == num){
+    alert('Good guess')
+}else{
+    alert('Aaaaagh Wrong, TRY AGAIN');
+
+
+}
+}
+
+//9. Write a JavaScript program to 
+//calculate days left until next Christmas.
+
+const today1 = new Date();
+// console.log(today1)
+var cmas = new Date(today1.getFullYear(), 11, 25);
+if(today.getMonth()== 11 && today.getDate()>25){
+    cmas.setFullYear(cmas.getFullYear()+1)
+}
+let one_day=1000*60*60*24;
+alert(Math.ceil((cmas.getTime()-today.getTime())/(one_day)) + 
+ 'days until Christmas');
+
+//  10. Write a JavaScript program to calculate multiplication 
+//  and division of two numbers (input from user).
+
+function multiply(){
+alert("hellou")
+}
+function divide(){
+alert('bonjour')
+}
+
+
+
+
         
 
 

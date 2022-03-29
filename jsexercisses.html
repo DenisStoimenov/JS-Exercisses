@@ -20,7 +20,30 @@
          <button onclick="getPrint()"></button>
          <!-- <button onclick="rotateString('target')"></button> -->
     <p id='target'>Trajkovskiii</p>
+
+    
+    <p style="display: inline;">Click this button to try your luck buddy </p><button style="display:inline" onclick="randomize()">Try your luck</button>
     <script src="./jsexercises-script.js"></script>
+    <br>
+    <br>
+    <div id="input-form" style="border: 1px solid black">
+        <label for="input1">1st Number</label>
+        <input type="number" id="input1" placeholder="enter a number">
+        <br>
+        <br>
+        <label for="input2">2nd Number</label>
+        <input type="number" id="input2" placeholder="enter a number">
+        <br>
+        <br>
+
+        <button style="margin-left: 25px;" onclick="multiply()">Multiply</button> 
+        <button style="display: inline-block;" onclick="divide()">Divide</button>
+        <br>
+        <br>
+        <p id="result">The Result is:</p>
+        <p id="result-display"></p>
+
+    </div>
 </body>
 
 </html>
