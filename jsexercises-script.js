@@ -105,9 +105,9 @@ let year = 2022;
 for (year; year <= 2060; year++) {
     const sunday = new Date(year, 0, 1);
     if (sunday.getDay() === 0)
-    console.log('----ex7----')
-        console.log('1st January is being a Sunday in ' + year);
         console.log('----ex7----')
+    console.log('1st January is being a Sunday in ' + year);
+    console.log('----ex7----')
 
 }
 
@@ -271,11 +271,11 @@ function getExtension() {
 // the difference between a given number and 13, 
 // if the number is greater than 13 return double the absolute difference
 
-function different(n){
-    if(n<=13){
-        return 13-n;
-    }else{
-        return (n-13) * 2;
+function different(n) {
+    if (n <= 13) {
+        return 13 - n;
+    } else {
+        return (n - 13) * 2;
 
     }
 }
@@ -289,17 +289,17 @@ console.log('----ex15----')
 // compute the sum of the two given integers. 
 // If the two values are same, then returns triple their sum. 
 
-function twonum(one,two){
-    if (one == two){
+function twonum(one, two) {
+    if (one == two) {
         return 3 * (+one + +two);
 
-    }else{
+    } else {
         return (+one + +two);
     }
 }
 console.log('----ex16----')
-console.log(twonum(5,5))
-console.log(twonum(10,10));
+console.log(twonum(5, 5))
+console.log(twonum(10, 10));
 console.log('----ex16----')
 
 // 17. Write a JavaScript program to compute the 
@@ -307,10 +307,10 @@ console.log('----ex16----')
 // a specified number and 19. Returns triple their 
 // absolute difference if the specified number is greater than 19.
 
-function different2(n){
-    if(n <= 19){
+function different2(n) {
+    if (n <= 19) {
         return (19 - n);
-    }else{
+    } else {
         return (n - 19) * 3;
     }
 }
@@ -324,22 +324,22 @@ console.log('----ex17----')
 // 18.Write a JavaScript program to check two given 
 // numbers and return true if one of the number is 50 or if their sum is 50.
 
-function if50(x,y){
+function if50(x, y) {
 
-    return((x == 50 || y == 50) || (x + y == 50))
+    return ((x == 50 || y == 50) || (x + y == 50))
 
 }
 console.log('----ex18----')
-console.log(if50(20,30));
-console.log(if50(50,2));
-console.log(if50(2,50));
-console.log(if50(60,3));
+console.log(if50(20, 30));
+console.log(if50(50, 2));
+console.log(if50(2, 50));
+console.log(if50(60, 3));
 console.log('----ex18----')
 
 // 19.Write a JavaScript program to check whether a given 
 // integer is within 20 of 100 or 400
-function tst400(x){
-    if((Math.abs(100-x)<=20) || (Math.abs(400-x)<=20)){
+function tst400(x) {
+    if ((Math.abs(100 - x) <= 20) || (Math.abs(400 - x) <= 20)) {
         return true;
 
 
@@ -351,31 +351,247 @@ console.log('----ex19----')
 
 // 20.Write a JavaScript program to check from two given integers, 
 // whether one is positive and another one is negative. 
-function plusMinus(x,y){
-    return ((x<0 && y>0) || x>0 && y<0);
+function plusMinus(x, y) {
+    return ((x < 0 && y > 0) || x > 0 && y < 0);
 }
 console.log('----ex20----')
-console.log(plusMinus(-2,-3));
-console.log(plusMinus(2,-3));
+console.log(plusMinus(-2, -3));
+console.log(plusMinus(2, -3));
 console.log('----ex20----')
 
 // 21.Write a JavaScript program to create a new string adding "Py" 
 // in front of a given string. If the given string begins with 
 // "Py" then return the original string.
 
-function strCheck(str1){
-    if(str1 === null || str1 === undefined || str1.substring(0,2) === 'Py'){
+function strCheck(str1) {
+    if (str1 === null || str1 === undefined || str1.substring(0, 2) === 'Py') {
         return str1;
     } else {
-        return 'Py'+ str1;
+        return 'Py' + str1;
     }
 
-    
+
 }
 console.log('----ex21----')
 console.log(strCheck('Denis'));
 console.log(strCheck('Pyrite'))
 console.log('----ex21----')
+
+// 22. Write a JavaScript program to remove a character at the 
+// specified position of a given string and return the new string.
+
+console.log('---ex22---')
+str1 = 'DenisS';
+console.log('Original String is:', str1);
+
+newStr = str1.replace(/D/g, '');
+console.log('Replaced String is:', newStr);
+console.log('---ex22---')
+
+// 23. Write a JavaScript program to create a new string from a given 
+// string changing the position of first and last characters. 
+// The string length must be greater than or equal to 1.
+
+console.log('---ex23---')
+
+function replaced(str1) {
+
+    if (str1.length <= 1) {
+        return str1;
+    }
+    midChar = str1.substring(1, str1.length - 1)
+    return (str1.charAt(str1.length - 1)) + midChar + str1.charAt(0);
+
+}
+console.log(replaced('car'));
+console.log(replaced('JavaScript'));
+console.log('a');
+
+console.log('---ex23---')
+
+
+// 24. Write a JavaScript program to create a 
+// new string from a given string with the first character 
+// of the given string added at the front and back.
+
+console.log('---ex24---')
+function stringing(str1) {
+    first = str1.substring(0, 1);
+    return first + str1 + first;
+}
+
+console.log(stringing('Denis'));
+console.log(stringing('Hello'));
+console.log('---ex24---')
+
+// 25. Write a JavaScript program to check whether a 
+// given positive number is a multiple of 3 or a multiple of 7.
+
+function test37(x) {
+
+    if (x % 3 == 0 || x % 7 == 0) {
+        return true;
+    }
+
+    return false;
+
+}
+console.log('---ex25---')
+console.log(test37(14));
+console.log(test37(10));
+console.log('---ex25---')
+
+// 26. Write a JavaScript program to create a new string from a given string taking 
+// the last 3 characters and added at both the front and back. 
+// The string length must be 3 or more.
+
+function ex26(str1) {
+
+    if (str1.length >= 3) {
+        strlen = 3
+
+        back = str1.substring(str1.length - 3);
+        return back + str1 + back;
+    }
+
+}
+console.log('---ex26---')
+console.log(ex26('Denis'));
+console.log(ex26('Hellou'))
+console.log(ex26('Bonjour'));
+console.log(ex26('BonBon'));
+console.log('---ex26---')
+
+// 27. Write a JavaScript program to check whether a 
+// string starts with 'Java' and false otherwise.
+
+function ex27(str1) {
+    if (str1.startsWith('Java', 0)) {
+        return true;
+    }
+    return false;
+}
+console.log('---ex27---')
+console.log(ex27('Javadenis'));
+
+function ex27Two(str1) {
+    if (str1.length < 4) {
+        return false;
+    }
+    front = str1.substring(0, 4);
+    if (front == 'Java') {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+}
+console.log(ex27Two('JavaScript'))
+console.log(ex27Two('javaSDenis'))
+
+console.log('---ex27---')
+
+// 28. Write a JavaScript program to check whether two given integer values 
+// are in the range 50..99 (inclusive). 
+// Return true if either of them are in the said range.
+
+function ex28(x, y) {
+
+    if ((x >= 50 && x <= 99) || (y >= 10 && y <= 99)) {
+        return true;
+    }
+    return false;
+
+}
+console.log('---ex28---')
+console.log(ex28(50, 80));
+console.log(ex28(48, 100))
+console.log('---ex28---')
+
+
+// 30. Write a JavaScript program to check whether a string "Script" 
+// presents at 5th (index 4) position in a given string, if "Script" 
+// presents in the string return the string without "Script" otherwise return the original one.
+
+function ex30(str1) {
+
+    if (str1 < 6) {
+        return str1;
+    }
+    let resultStr = str1
+
+    if (str1.substring(10, 4) == 'Script') {
+        resultStr = str1.substring(0, 4) + str1.substring(10, str1.length);
+
+    }
+    return resultStr;
+}
+console.log('---ex30---')
+console.log(ex30('TypeScript'))
+console.log(ex30('JavaScript'))
+console.log(ex30('CoffeeScript'))
+console.log('---ex30---')
+
+// 31. Write a JavaScript program to find the largest of three given integers
+
+function largestOfThree(mainArray) {
+    return mainArray.map(function (subArray) {
+        return Math.max.apply(null, subArray);
+    });
+}
+console.log('---ex31---')
+console.log(largestOfThree([[4, 5, 1],
+[13, 27, 18],
+[32, 35, 37],
+[1000, 1001, 1]]))
+
+console.log('solution num2')
+
+function max_of_three(x, y, z) {
+    max_val = 0;
+    if (x > y) {
+        max_val = x;
+    } else {
+        max_val = y;
+    }
+    if (z > max_val) {
+        max_val = z;
+    }
+    return max_val;
+}
+
+console.log(max_of_three(1, 0, 1));
+console.log(max_of_three(0, -10, -20));
+console.log(max_of_three(1000, 510, 440));
+console.log('---ex31---')
+
+
+// 32. Write a JavaScript program to find a value which 
+// is nearest to 100 from two different given integer values.
+
+function near_100(x, y) {
+    if (x != y) {
+        x1 = Math.abs(x - 100);
+        y1 = Math.abs(y - 100);
+
+        if (x1 < y1) {
+            return x;
+        }
+        if (y1 < x1) {
+            return y;
+        }
+        return 0;
+    }
+    else
+        return false;
+}
+console.log(near_100(90, 90));
+console.log(near_100(90, 89));
+console.log(near_100(-90, -89));
+console.log(near_100(90, 90));
+
+
 
 
 
