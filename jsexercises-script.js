@@ -592,11 +592,129 @@ console.log(near_100(-90, -89));
 console.log(near_100(90, 90));
 
 
+// 33. Write a JavaScript program to check whether 
+// two numbers are in range 40..60 or in the range 70..100 inclusive.
+
+function range(x, y) {
+    if ((x >= 40 && x <= 60 && y >= 40 && y <= 60)
+
+        ||
+        (x >= 70 && x <= 100 && y >= 70 && y <= 100)) {
+        return true;
+    }
+    else {
+        return false
+    }
 
 
 
+}
+console.log('----ex33---')
+console.log(range(44, 56))
+console.log(range(70, 95))
 
 
+// 34. Write a JavaScript program to find the larger number from the two given positive integers,
+//  the two numbers are in the range 40..60 inclusive.
+
+function ex34(x, y) {
+    if (x >= 40 && x <= 60 && y >= 40 && y <= 60) {
+        if (x === y) {
+            return 'Numbers are the same'
+        } else if (x > y) {
+            return x;
+        } else {
+            return y;
+        }
+    }
+
+    else {
+        return "Numbers dont fit in range";
+
+    }
+}
+
+console.log(ex34(45, 60));
+console.log(ex34(25, 60));
+console.log(ex34(45, 80));
+console.log(ex34(60, 60));
+
+// 35. Write a program to check whether a specified character 
+// exists within the 2nd to 4th position in a given string.
+
+function checkChar(str1, char) {
+    ctr = 0;
+    for (let i = 0; i < str1.length; i++) {
+
+        if ((str1.charAt(i) == char) && (i >= 1 && i <= 3)) {
+            ctr = 1;
+            break;
+        }
+    }
+    if (ctr == 1) return true;
+    return false
+
+
+
+}
+console.log('----ex35----')
+
+console.log(checkChar('denis', 'n'))
+console.log(checkChar('Phyton', 'y'))
+
+
+// 36. Write a JavaScript program to check whether the 
+// last digit of the three given positive integers is same.
+
+function ex36(x, y, z) {
+    if ((x > 0) && y > 0 && z > 0) {
+        return (x % 10 == y % 10 && y % 10 === z % 10 && x % 10 == z % 10);
+    }
+    else {
+        return false;
+    }
+}
+
+console.log('---ex36---')
+console.log(ex36(20, 30, 60))
+console.log(ex36(-20, 30, -60))
+
+
+// 37. Write a JavaScript program to create new string with first 3
+// characters are in lower case from a given string.
+// If the string length is less than 3 convert all the characters in upper case
+
+
+function upperLower(str) {
+
+    if (str.length < 3) {
+        return str.toUpperCase();
+    }
+    frontPart = (str.substring(0, 3)).toLowerCase();
+    backPart = str.substring(3, str.length);
+    return frontPart + backPart;
+
+}
+
+console.log('---ex37---')
+console.log(upperLower('Denis'))
+console.log(upperLower('Phyton'))
+console.log(upperLower('do'))
+
+// 38. Write a JavaScript program to check the total marks of a student in various examinations. 
+// The student will get A+ grade if the total marks are in the range 89..100 inclusive, 
+// if the examination is "Final-exam." the student will get A+ grade and total marks must 
+// be greater than or equal to 90. Return true if the student get A+ grade or false otherwise.
+
+function examStatus(totMarks, isExam){
+    if(isExam) {
+        return totMarks >= 90;
+    }
+    return (totMarks >= 89 && totMarks <= 100)
+}
+
+console.log(examStatus("78", ''))
+console.log(examStatus('99', 'true'))
 
 
 
