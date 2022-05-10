@@ -845,12 +845,96 @@ console.log(ex46(14,21))
 console.log(ex46(16,20))
 console.log(ex46(14,20))
 
+// 47. Write a JavaScript program to check whether a given number is presents in the range 40..10000.
+function ex47(x,y,n){
+    if(n < 40 || n > 1000)
+        return false;
+            else
+            if (n>= x && n<= y)
+            return true;
+        else
+            return false
+
+}
+console.log('---ex47---')
+console.log(ex47(40, 4000, 45))
+console.log(ex47(89, 4000, 30))
+
+// 48. Write a JavaScript program to reverse a given string.
+
+function reverseString(str){
+    let newString = "";
+    for (let i = str.length - 1; i >= 0; i--){
+
+    
+        newString += str[i];
+}
+return newString;
+}
+
+console.log(reverseString('hellow'))
+console.log(reverseString('Denis'))
+
+//Or it can be done like this here:
+
+function reverseString2(str){
+    return str.split("").reverse().join("")
+}
+console.log(reverseString2('hellow'))
+console.log(reverseString2('welcome'))
 
 
+// 49. Write a JavaScript program to replace every character in a 
+// given string with the character following it in the alphabet. 
 
+function letterChanges(text){
+    let s = text.split('')
+    for(let i = 0; i<s.length; i++){
+        switch(s[i]){
+            case '' :
+                break;
+            case 'z' :
+                s[i] = 'a';
+            break;
+            case 'Z':
+                s[i] = 'A';
+            default :
+                s[i]=String.fromCharCode(1 + s[i].charCodeAt(0))
+        }
+        switch(s[i]){
+            case 'a' : case 'e' : case 'i': case 'o': case 'u' :
+                s[i] = s[i].toUpperCase();
+        }
+    }
+    return s.join('')
+}
 
+console.log(letterChanges('PYTHON'));
+console.log(letterChanges('Denis'))
 
+// 50. Write a JavaScript program to capitalize the first letter of each word of a given string.
 
+function capital_letter(str) 
+{
+    str = str.split(" ");
+
+    for (var i = 0, x = str.length; i < x; i++) {
+        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+    }
+
+    return str.join(" ");
+}
+
+console.log(capital_letter("Write a JavaScript program to capitalize the first letter of each word of a given string."));
+
+// 51. Write a JavaScript program to convert a given number to hours and minutes.
+
+function timeConvert(num){
+    let hours = Math.floor(num / 60);
+    let minutes = num % 60;
+    return hours + ':' + minutes;
+}
+console.log(timeConvert(90));
 
 
 
