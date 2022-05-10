@@ -706,8 +706,8 @@ console.log(upperLower('do'))
 // if the examination is "Final-exam." the student will get A+ grade and total marks must 
 // be greater than or equal to 90. Return true if the student get A+ grade or false otherwise.
 
-function examStatus(totMarks, isExam){
-    if(isExam) {
+function examStatus(totMarks, isExam) {
+    if (isExam) {
         return totMarks >= 90;
     }
     return (totMarks >= 89 && totMarks <= 100)
@@ -716,11 +716,134 @@ function examStatus(totMarks, isExam){
 console.log(examStatus("78", ''))
 console.log(examStatus('99', 'true'))
 
+// 39. Write a JavaScript program to compute the sum of the two given integers, 
+// If the sum is in the range 50..80 return 65 other wise return 80.
+
+function ex39(x, y) {
+
+    const sum = x + y;
+    if (sum >= 50 && sum <= 80) {
+        return 65
+    }
+    return 80;
+}
+console.log(ex39(20, 30))
+console.log(ex39(80, 90))
+
+// 40. Write a JavaScript program to check from two given integers
+//  whether one of them is 8 or their sum or difference is 8. 
+
+function ex40(x, y) {
+    if (x == 8 || y == 8) {
+        return true;
+    }
+    if (x + y == 8 || Math.abs(x - y) == 8) {
+        return true
+    }
+    return false;
+
+}
+
+console.log(ex40(4, 4))
+console.log(ex40(8, 8))
+console.log(ex40(17, 18))
+
+// 41. Write a JavaScript program to check three given numbers, 
+// if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40.
+
+function ex41(x, y, z) {
+    if (x == y && y == z) {
+        return 30;
+    }
+    if (x == y || y == z || z == x) {
+        return 40;
+    }
+    return 20;
+}
+console.log(ex41(8, 8, 8))
+console.log(ex41(8, 8, 18))
+console.log(ex41(8, 9, 10))
+
+// 42. Write a JavaScript program to check whether three given numbers 
+// are increasing in strict mode or in soft mode.
+// Strict mode -> 10, 15, 31 : Soft mode -> 24, 22, 31 or 22, 22, 31
+
+function ex42(x, y, z) {
+    if (y > x && z > y) {
+        return 'strict mode';
+    }
+    else if (z > y)
+        return "soft mode";
+    else
+        return "Idk what mode is this"
+}
+console.log(ex42(10, 15, 31))
+console.log(ex42(24, 22, 31))
+console.log(ex42(22, 22, 31))
+console.log(ex42(8, 8, 8))
+
+// 43. Write a JavaScript program to check from three given numbers 
+// (non negative integers) that two or all of them have the same rightmost digit. 
+
+function ex43(x, y, z) {
+    p = x % 10;
+    q = y % 10;
+    r = z % 10;
+
+    return (p === q) || (q === r) || (q === r)
+
+}
+console.log(ex43(22, 32, 42));
+console.log(ex43(102, 302, 2));
+console.log(ex43(20, 22, 45));
+
+// 44. Write a JavaScript program to check from three given 
+// integers that whether a number is greater than or equal to 20 and less than one of the others.
+
+function ex44(x, y, z) {
+
+    return (x >= 20 && (x < y || x < z)) ||
+        (y >= 20 && (y < x || y < z)) ||
+        (z >= 20 && (z < x || z < y));
 
 
+}
 
+console.log(ex44(20, 21, 22))
+console.log(ex44(23, 23, 10))
 
+// 45. Write a JavaScript program to check two given integer values and 
+// return true if one of the number is 15 or if their sum or difference is 15.
 
+function ex45(x,y){
+    // if(x === 15 || y === 15 ){
+    //     return true;
+    // }
+    // if (x + y === 15 || Math.abs(x - y) === 15 ){
+    //     return true;
+    // }
+    // return false;
+return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
+   
+}
+
+console.log(ex45(7,8))
+console.log(ex45(16,17))
+
+// 46. Write a JavaScript program to check two given non-negative 
+// integers that whether one of the number (not both) is multiple of 7 or 11.
+
+function ex46(a,b){
+    if(!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))){
+        return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0 ))
+    }
+    else 
+    return false;
+}
+console.log('----ex46---')
+console.log(ex46(14,21))
+console.log(ex46(16,20))
+console.log(ex46(14,20))
 
 
 
