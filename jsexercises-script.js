@@ -936,13 +936,47 @@ function timeConvert(num){
 }
 console.log(timeConvert(90));
 
+// 52. Write a JavaScript program to convert the letters of a given string in alphabetical order. 
+
+function ex52(str){
+
+    return str.split('').sort().join('')
+
+}
+console.log(ex52('acbefd'))
+console.log(ex52('ghiabcilksqrstfgdeefc'))
 
 
+// 53. Write a JavaScript program to check whether the characters
+//  a and b are separated by exactly 3 places anywhere (at least once) in a given string.
 
+function ex53(str){
 
+    return (/a...b/).test(str) || (/b...a/).test(str)
+}
+console.log(ex53("Chainsbreak"))
 
+// 54. Write a JavaScript program to count the number of vowels in a given string.
 
+function ex54(str){
+    return str.replace(/[^aeiou]/g, '').length
 
+}
 
+console.log(ex54('aeiou'))
+console.log(ex54('Denis'))
+
+// 55. Write a JavaScript program to check whether a given string contains equal number of p's and t's
+
+function ex55(str){
+    let str_p = str.replace(/[^p]/g, '')
+    let str_t = str.replace(/[^t]/g, '')
+
+    let num_p = str_p.length;
+    let num_t = str_t.length;
+
+    return num_p === num_t
+}
+console.log(ex55('pppttt'))
 
 
