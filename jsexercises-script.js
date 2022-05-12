@@ -815,7 +815,7 @@ console.log(ex44(23, 23, 10))
 // 45. Write a JavaScript program to check two given integer values and 
 // return true if one of the number is 15 or if their sum or difference is 15.
 
-function ex45(x,y){
+function ex45(x, y) {
     // if(x === 15 || y === 15 ){
     //     return true;
     // }
@@ -823,34 +823,34 @@ function ex45(x,y){
     //     return true;
     // }
     // return false;
-return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
-   
+    return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
+
 }
 
-console.log(ex45(7,8))
-console.log(ex45(16,17))
+console.log(ex45(7, 8))
+console.log(ex45(16, 17))
 
 // 46. Write a JavaScript program to check two given non-negative 
 // integers that whether one of the number (not both) is multiple of 7 or 11.
 
-function ex46(a,b){
-    if(!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))){
-        return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0 ))
+function ex46(a, b) {
+    if (!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))) {
+        return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0))
     }
-    else 
-    return false;
+    else
+        return false;
 }
 console.log('----ex46---')
-console.log(ex46(14,21))
-console.log(ex46(16,20))
-console.log(ex46(14,20))
+console.log(ex46(14, 21))
+console.log(ex46(16, 20))
+console.log(ex46(14, 20))
 
 // 47. Write a JavaScript program to check whether a given number is presents in the range 40..10000.
-function ex47(x,y,n){
-    if(n < 40 || n > 1000)
+function ex47(x, y, n) {
+    if (n < 40 || n > 1000)
         return false;
-            else
-            if (n>= x && n<= y)
+    else
+        if (n >= x && n <= y)
             return true;
         else
             return false
@@ -862,14 +862,14 @@ console.log(ex47(89, 4000, 30))
 
 // 48. Write a JavaScript program to reverse a given string.
 
-function reverseString(str){
+function reverseString(str) {
     let newString = "";
-    for (let i = str.length - 1; i >= 0; i--){
+    for (let i = str.length - 1; i >= 0; i--) {
 
-    
+
         newString += str[i];
-}
-return newString;
+    }
+    return newString;
 }
 
 console.log(reverseString('hellow'))
@@ -877,7 +877,7 @@ console.log(reverseString('Denis'))
 
 //Or it can be done like this here:
 
-function reverseString2(str){
+function reverseString2(str) {
     return str.split("").reverse().join("")
 }
 console.log(reverseString2('hellow'))
@@ -887,22 +887,22 @@ console.log(reverseString2('welcome'))
 // 49. Write a JavaScript program to replace every character in a 
 // given string with the character following it in the alphabet. 
 
-function letterChanges(text){
+function letterChanges(text) {
     let s = text.split('')
-    for(let i = 0; i<s.length; i++){
-        switch(s[i]){
-            case '' :
+    for (let i = 0; i < s.length; i++) {
+        switch (s[i]) {
+            case '':
                 break;
-            case 'z' :
+            case 'z':
                 s[i] = 'a';
-            break;
+                break;
             case 'Z':
                 s[i] = 'A';
-            default :
-                s[i]=String.fromCharCode(1 + s[i].charCodeAt(0))
+            default:
+                s[i] = String.fromCharCode(1 + s[i].charCodeAt(0))
         }
-        switch(s[i]){
-            case 'a' : case 'e' : case 'i': case 'o': case 'u' :
+        switch (s[i]) {
+            case 'a': case 'e': case 'i': case 'o': case 'u':
                 s[i] = s[i].toUpperCase();
         }
     }
@@ -914,8 +914,7 @@ console.log(letterChanges('Denis'))
 
 // 50. Write a JavaScript program to capitalize the first letter of each word of a given string.
 
-function capital_letter(str) 
-{
+function capital_letter(str) {
     str = str.split(" ");
 
     for (var i = 0, x = str.length; i < x; i++) {
@@ -929,7 +928,7 @@ console.log(capital_letter("Write a JavaScript program to capitalize the first l
 
 // 51. Write a JavaScript program to convert a given number to hours and minutes.
 
-function timeConvert(num){
+function timeConvert(num) {
     let hours = Math.floor(num / 60);
     let minutes = num % 60;
     return hours + ':' + minutes;
@@ -938,7 +937,7 @@ console.log(timeConvert(90));
 
 // 52. Write a JavaScript program to convert the letters of a given string in alphabetical order. 
 
-function ex52(str){
+function ex52(str) {
 
     return str.split('').sort().join('')
 
@@ -950,7 +949,7 @@ console.log(ex52('ghiabcilksqrstfgdeefc'))
 // 53. Write a JavaScript program to check whether the characters
 //  a and b are separated by exactly 3 places anywhere (at least once) in a given string.
 
-function ex53(str){
+function ex53(str) {
 
     return (/a...b/).test(str) || (/b...a/).test(str)
 }
@@ -958,7 +957,7 @@ console.log(ex53("Chainsbreak"))
 
 // 54. Write a JavaScript program to count the number of vowels in a given string.
 
-function ex54(str){
+function ex54(str) {
     return str.replace(/[^aeiou]/g, '').length
 
 }
@@ -968,7 +967,7 @@ console.log(ex54('Denis'))
 
 // 55. Write a JavaScript program to check whether a given string contains equal number of p's and t's
 
-function ex55(str){
+function ex55(str) {
     let str_p = str.replace(/[^p]/g, '')
     let str_t = str.replace(/[^t]/g, '')
 
@@ -978,5 +977,149 @@ function ex55(str){
     return num_p === num_t
 }
 console.log(ex55('pppttt'))
+
+// 56. Write a JavaScript program to divide two positive numbers and return a string with properly formatted commas. 
+
+// function division_string(n1, n2) {
+
+//     n1 = 80;
+//     n2 = 6;
+
+//     var div = Math.round(n1 / n2).toString(),
+//     result_array = div.split("");
+
+//     if (div >= 1000)
+//     {
+//     for (var i = div.length - 3; i > 0; i -= 3) 
+//     {
+//     result_array.splice(i, 0, ",");
+//     }
+//     let result_array = 0;
+//     }
+// }
+//     console.log(result_array);
+
+//idk this one
+
+// 57. Write a JavaScript program to create a new string of specified copies (positive number) of a given string
+
+function stringCopies(str, n) {
+    if (n < 0)
+        return false;
+    else
+        return str.repeat(n)
+}
+
+console.log(stringCopies('denis', 6))
+console.log(stringCopies('blah', 4))
+
+// 58. Write a JavaScript program to create a new string of 4 copies of the last 3 
+// characters of a given original string. The length of the given string must be 3 and above.
+
+function ex58(str) {
+
+    if (str.length >= 3) {
+        resultStr = str.substring(str.length - 3);
+        return resultStr + resultStr + resultStr + resultStr;
+    }
+    else
+        return false;
+
+}
+console.log(ex58('denis'))
+
+// 59. Write a JavaScript program to extract the first half of a string of even length
+
+function ex59(str) {
+
+    if (str.length % 2 === 0) {
+        return str.slice(0, str.length / 2)
+    }
+    return str;
+
+}
+
+console.log(ex59('banana'))
+console.log(ex59('reactt'))
+
+
+// 60. Write a JavaScript program to create a new string without the first and last character of a given string.
+
+function ex60(str) {
+    return str.substring(1, str.length - 1);
+}
+console.log(ex60('Denis'))
+console.log(ex60('Dormeo'))
+
+
+// 61. Write a JavaScript program to concatenate two strings except their first character.
+
+function ex61(str1, str2) {
+
+    str1 = str1.substring(1, str1.length)
+    str2 = str2.substring(1, str2.length)
+
+    return str1.concat(str2)
+
+
+
+}
+console.log(ex61('denis', 'stoimenov'))
+console.log(ex61('laptop', 'chinese'))
+
+
+// 62. Write a JavaScript program to move last three character to the start of a given string.
+//  The string length must be greater or equal to three. 
+
+function ex62(str) {
+    if (str.length > 3) {
+        return str.slice(-3) + str.slice(0, -3);
+    }
+    return str
+}
+console.log(ex62('JavaScript'))
+console.log(ex62('Hi'))
+
+// 63. Write a JavaScript program to create a string using the middle three characters of a given string of odd length.
+//  The string length must be greater or equal to three.
+
+function ex63(str) {
+    if (str.length % 2 != 0) {
+        mid = (str.length + 1) / 2;
+        return str.slice(mid - 2, mid + 1)
+
+    }
+    return str;
+}
+console.log(ex63('Denis'))
+console.log(ex63('Compute'))
+
+// 64. Write a JavaScript program to concatenate two strings and return the result. 
+// If the length of the strings are not same then remove the characters from the longer string. 
+
+function ex64(str1, str2) {
+    const m = Math.min(str1.length, str2.length)
+
+    return str1.substring(str1.length - m) + str2.substring(str2.length - m);
+
+}
+console.log(ex64('abcdef', 'cde'))
+console.log(ex64('ab', 'cdefgh'))
+
+// 65. Write a JavaScript program to test whether a string end with "Script".
+// The string length must be greater or equal to 6.
+
+function ex65(str){
+    if (str.substring(str.length - 6, str.length) == 'Script'){
+        return true;
+    }
+    else{
+        return false;
+    } 
+    
+}
+console.log(ex65('JavaScript'))
+console.log(ex65('TypeScript'))
+
 
 
